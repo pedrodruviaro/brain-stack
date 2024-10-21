@@ -11,7 +11,7 @@ useHead({
 
 <template>
   <NuxtLayout>
-    <NuxtLoadingIndicator />
+    <NuxtLoadingIndicator color="#DB2777" :height="4" />
     <NuxtPage />
   </NuxtLayout>
 </template>

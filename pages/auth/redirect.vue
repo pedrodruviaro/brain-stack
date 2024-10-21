@@ -10,7 +10,7 @@ const navigateToAppDashboard = async () => {
   router.push("/app")
 }
 
-// onMounted(() => navigateToAppDashboard())
+onMounted(() => navigateToAppDashboard())
 </script>
 
 <template>
