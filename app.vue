@@ -1,3 +1,14 @@
+<script setup lang="ts">
+useHead({
+  htmlAttrs: {
+    lang: "pt-BR",
+  },
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - BrainStack` : "BrainStack"
+  },
+})
+</script>
+
 <template>
   <NuxtLayout>
     <NuxtLoadingIndicator />
