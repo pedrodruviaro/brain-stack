@@ -4,3 +4,11 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
+
+<style>
+html,
+body,
+#__nuxt {
+  @apply font-[Poppins];
+}
+</style>
