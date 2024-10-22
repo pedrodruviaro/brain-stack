@@ -3,7 +3,7 @@ useSeoMeta({
   title: "Entre e comece a compartilhar",
 })
 
-const loading = ref(false)
+const { loginWithGoogle, loading } = useAuthActions()
 </script>
 
 <template>
@@ -37,6 +37,7 @@ const loading = ref(false)
               icon-pos="right"
               outlined
               :loading
+              @click="loginWithGoogle"
             />
           </div>
         </template>

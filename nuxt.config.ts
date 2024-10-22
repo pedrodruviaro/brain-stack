@@ -4,11 +4,22 @@ import { AppPreset } from "./assets/presets/nora"
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
+  imports: {
+    dirs: ["./composables/auth", "./composables/idea"],
+  },
   modules: [
     "@primevue/nuxt-module",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
+    "@nuxtjs/supabase",
   ],
+  supabase: {
+    redirectOptions: {
+      login: "/auth/login",
+      callback: "/auth/redirect",
+      exclude: ["/", "/idea/*"],
+    },
+  },
   primevue: {
     options: {
       theme: {
@@ -23,6 +34,14 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Poppins: true,
+    },
+  },
+  runtimeConfig: {
+    public: {
+      nodeEnv: process.env.NODE_ENV,
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY,
+      siteUrl: process.env.SITE_URL,
     },
   },
 })
