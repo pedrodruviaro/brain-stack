@@ -3,7 +3,7 @@ useSeoMeta({
   title: "Entre e comece a compartilhar",
 })
 
-const loading = ref(true)
+const loading = ref(false)
 </script>
 
 <template>

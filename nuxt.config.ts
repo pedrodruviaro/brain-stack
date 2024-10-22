@@ -19,6 +19,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  css: ["primeicons/primeicons.css"],
   googleFonts: {
     families: {
       Poppins: true,
