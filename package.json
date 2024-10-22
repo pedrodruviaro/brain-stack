@@ -16,12 +16,14 @@
     "nuxt": "^3.13.2",
     "primeicons": "^7.0.0",
     "quill": "^2.0.2",
+    "uuid": "^10.0.0",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@primevue/nuxt-module": "^4.1.1",
-    "@tailwindcss/typography": "^0.5.15"
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/uuid": "^10.0.0"
   }
 }

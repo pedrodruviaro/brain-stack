@@ -1,12 +1,12 @@
 import type { SupabaseClient } from "@supabase/supabase-js"
 import type { Database } from "~/libs/supabase/schema"
 import { getMyselfAdapter } from "./adapters"
+import type { AuthServicesOptions } from "./types"
 
-export interface Options {
-  redirectTo: string
-}
-
-export default (client: SupabaseClient<Database>, options: Options) => ({
+export default (
+  client: SupabaseClient<Database>,
+  options: AuthServicesOptions
+) => ({
   async signInWithGoogle() {
     await client.auth.signInWithOAuth({
       provider: "google",

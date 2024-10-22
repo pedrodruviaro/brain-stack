@@ -9,9 +9,10 @@ useSeoMeta({
   title: "Crie sua ideia",
 })
 
-const modalOpen = ref(false)
+const isPreviewOpen = ref(false)
 
-const { loading, title, content, create } = useIdeaCreate()
+const { user } = useLoggedUser()
+const { loading, title, content, create } = useIdeaCreate({ user })
 
 const handleCreate = () => {
   create()
@@ -25,11 +26,11 @@ const handleCreate = () => {
       v-model:content="content"
       :loading="loading"
       @create="handleCreate"
-      @open-preview="modalOpen = true"
+      @open-preview="isPreviewOpen = true"
     />
 
     <LazyDialog
-      v-model:visible="modalOpen"
+      v-model:visible="isPreviewOpen"
       maximizable
       modal
       :header="title"
