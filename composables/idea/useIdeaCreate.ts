@@ -1,8 +1,15 @@
+import { z, type ZodFormattedError } from "zod"
+import type { Idea } from "~/entities/Idea/Idea"
 import type { User } from "~/entities/User/User"
 
 interface UseIdeaCreateOptions {
   user: Ref<User | undefined>
 }
+
+const schema = z.object({
+  title: z.string().min(2, "Título é obrigatório"),
+  content: z.string().min(2, "Descreva a sua ideia"),
+})
 
 export function useIdeaCreate({ user }: UseIdeaCreateOptions) {
   const toast = useToast()
@@ -13,22 +20,26 @@ export function useIdeaCreate({ user }: UseIdeaCreateOptions) {
   const title = ref("")
   const content = ref("")
   const profileId = ref("")
+  const errors = ref<ZodFormattedError<Idea>>()
+
+  const safeParse = () => {
+    const result = schema.safeParse({
+      title: title.value,
+      content: content.value,
+    })
+
+    if (!result.success) {
+      errors.value = result.error.format()
+    }
+
+    return result
+  }
 
   const create = async () => {
     try {
-      if (title.value.trim() === "" || content.value.trim() === "") {
-        toast.add({
-          severity: "error",
-          summary: "Atenção",
-          detail: "Título e conteúdo são obrigatórios",
-          life: 2000,
-        })
-        return
-      }
-
       loading.value = true
 
-      await services.idea.create({
+      const response = await services.idea.create({
         title: title.value,
         content: content.value,
         profileId: profileId.value,
@@ -43,6 +54,9 @@ export function useIdeaCreate({ user }: UseIdeaCreateOptions) {
 
       title.value = ""
       content.value = ""
+      errors.value = undefined
+
+      return response
     } catch (error) {
       logger(error)
     } finally {
@@ -59,6 +73,8 @@ export function useIdeaCreate({ user }: UseIdeaCreateOptions) {
     loading,
     title,
     content,
+    errors,
     create,
+    safeParse,
   }
 }

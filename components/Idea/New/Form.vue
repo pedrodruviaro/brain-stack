@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import type { EditorLoadEvent } from "primevue/editor"
 import { TEMPLATE_DEFAULT } from "~/constants/defaultIdeaTemplate"
+import type { EditorLoadEvent } from "primevue/editor"
+import type { ZodFormattedError } from "zod"
+import type { Idea } from "~/entities/Idea/Idea"
 
 const props = defineProps<{
   loading: boolean
+  errors?: ZodFormattedError<Idea>
 }>()
 
 const emits = defineEmits<{
@@ -55,6 +58,11 @@ const handleSetDefaultTemplate = () => {
           <InputText id="title" size="small" class="w-full" v-model="title" />
           <label for="title">Título da ideia</label>
         </FloatLabel>
+        <span
+          class="text-sm text-red-600 opacity-90"
+          v-if="props.errors?.title"
+          >{{ props.errors.title._errors[0] }}</span
+        >
       </div>
 
       <Button
@@ -80,12 +88,18 @@ const handleSetDefaultTemplate = () => {
         ref="editorRef"
         @load="onEditorLoad"
       />
+      <span
+        class="text-sm text-red-600 opacity-90"
+        v-if="props.errors?.content"
+        >{{ props.errors.content._errors[0] }}</span
+      >
     </div>
 
     <Button
       label="Criar ideia"
       icon="pi pi-plus"
       icon-pos="right"
+      size="small"
       :loading="props.loading"
       @click="emits('create')"
     />

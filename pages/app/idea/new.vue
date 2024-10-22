@@ -12,10 +12,19 @@ useSeoMeta({
 const isPreviewOpen = ref(false)
 
 const { user } = useLoggedUser()
-const { loading, title, content, create } = useIdeaCreate({ user })
+const { loading, title, content, errors, create, safeParse } = useIdeaCreate({
+  user,
+})
 
-const handleCreate = () => {
-  create()
+const handleCreate = async () => {
+  const isValid = safeParse().success
+  if (!isValid) return
+
+  const response = await create()
+  if (response) {
+    // router.push...
+    console.log("Criado!")
+  }
 }
 </script>
 
@@ -25,6 +34,7 @@ const handleCreate = () => {
       v-model:title="title"
       v-model:content="content"
       :loading="loading"
+      :errors="errors"
       @create="handleCreate"
       @open-preview="isPreviewOpen = true"
     />
