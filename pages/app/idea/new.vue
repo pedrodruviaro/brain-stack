@@ -19,7 +19,7 @@ const handleCreate = () => {
 </script>
 
 <template>
-  <div class="space-y-4">
+  <div>
     <IdeaNewForm
       v-model:title="title"
       v-model:content="content"

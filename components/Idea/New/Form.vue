@@ -48,7 +48,7 @@ const handleSetDefaultTemplate = () => {
 </script>
 
 <template>
-  <div>
+  <div class="space-y-4">
     <div class="grid gap-2 md:grid-cols-[1fr_max-content]">
       <div class="w-full">
         <FloatLabel variant="on">
@@ -57,30 +57,30 @@ const handleSetDefaultTemplate = () => {
         </FloatLabel>
       </div>
 
-      <div>
-        <Button
-          icon="pi pi-eye"
-          aria-label="Visualização"
-          v-tooltip="'Abrir preview'"
-          size="small"
-          outlined
-          @click="emits('open-preview')"
-        />
-
-        <Button
-          size="small"
-          label="Usar template"
-          @click="handleSetDefaultTemplate"
-        />
-      </div>
+      <Button
+        icon="pi pi-eye"
+        aria-label="Visualização"
+        v-tooltip="'Abrir preview'"
+        size="small"
+        outlined
+        @click="emits('open-preview')"
+      />
     </div>
 
-    <Editor
-      v-model="content"
-      editorStyle="height: 320px"
-      ref="editorRef"
-      @load="onEditorLoad"
-    />
+    <div class="space-y-2">
+      <Button
+        size="small"
+        label="Usar template de ideia"
+        outlined
+        @click="handleSetDefaultTemplate"
+      />
+      <Editor
+        v-model="content"
+        editorStyle="height: 320px"
+        ref="editorRef"
+        @load="onEditorLoad"
+      />
+    </div>
 
     <Button
       label="Criar ideia"
