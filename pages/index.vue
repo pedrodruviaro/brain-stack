@@ -6,6 +6,7 @@ useSeoMeta({
 
 <template>
   <div>
+    <Banner />
     <div>Landing page</div>
     <NuxtLink to="/auth/login">LOGIN</NuxtLink>
   </div>

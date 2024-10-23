@@ -16,7 +16,6 @@ useHead({
       <NuxtPage />
       <Toast position="top-right" />
     </NuxtLayout>
-    <Banner />
   </div>
 </template>
 
