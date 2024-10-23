@@ -30,6 +30,8 @@ const handleCreate = async () => {
 
 <template>
   <div>
+    <BaseTitle as="h1" label="Crie sua Ideia" class="mb-6" decoration />
+
     <IdeaNewForm
       v-model:title="title"
       v-model:content="content"

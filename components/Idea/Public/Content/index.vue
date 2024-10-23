@@ -8,7 +8,7 @@ const props = defineProps<{
 <template>
   <Card>
     <template #title>
-      <h1 class="font-bold text-xl md:text-2xl">💡 {{ props.title }}</h1>
+      <BaseTitle as="h1">💡 {{ props.title }}</BaseTitle>
       <Divider type="solid" />
     </template>
 

@@ -33,7 +33,7 @@ export default defineNuxtConfig({
   css: ["primeicons/primeicons.css"],
   googleFonts: {
     families: {
-      Poppins: true,
+      Poppins: [400, 600, 700, 900],
     },
   },
   runtimeConfig: {

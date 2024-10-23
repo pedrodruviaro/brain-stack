@@ -12,7 +12,7 @@ const props = defineProps<{
         <div class="flex flex-wrap gap-4 items-center justify-between">
           <div class="flex flex-wrap gap-2 items-center">
             <Avatar :image="props.avatarUrl" size="xlarge" shape="circle" />
-            <h2 class="font-bold text-2xl lg:text-3xl">{{ props.name }}</h2>
+            <BaseTitle :label="props.name" size="lg" />
           </div>
 
           <div>
