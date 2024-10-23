@@ -11,12 +11,12 @@ useHead({
 
 <template>
   <div>
-    <Banner />
     <NuxtLayout>
       <NuxtLoadingIndicator color="#DB2777" :height="4" />
       <NuxtPage />
       <Toast position="top-right" />
     </NuxtLayout>
+    <Banner />
   </div>
 </template>
 

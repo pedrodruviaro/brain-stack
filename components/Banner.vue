@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="py-1 px-2 bg-pink-500 text-white relative z-20">
+  <div class="py-2.5 px-2 bg-pink-500 text-white relative z-20">
     <p class="text-xs md:text-sm text-center">
       <NuxtLink
         to="https://github.com/pedrodruviaro/brain-stack"
