@@ -27,6 +27,20 @@ const handleCreate = async () => {
     setTimeout(() => router.push("/app"), 750)
   }
 }
+
+onBeforeRouteLeave((to, from, next) => {
+  if (title.value.trim() !== "" || content.value.trim() !== "") {
+    const message = "Você tem conteúdo não salvo, deseja realmente sair?"
+    const wantsToLeave = confirm(message)
+    if (wantsToLeave) {
+      next()
+      return
+    }
+    next(false)
+  } else {
+    next()
+  }
+})
 </script>
 
 <template>
