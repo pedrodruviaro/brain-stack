@@ -4,6 +4,10 @@ useSeoMeta({
 })
 
 const { loginWithGoogle, loading } = useAuthActions()
+
+const router = useRouter()
+const session = useSupabaseSession()
+if (session.value) router.push("/app")
 </script>
 
 <template>
