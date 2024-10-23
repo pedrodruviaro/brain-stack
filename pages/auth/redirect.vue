@@ -6,7 +6,7 @@ useSeoMeta({
 const router = useRouter()
 
 const navigateToAppDashboard = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 2_000))
+  await new Promise((resolve) => setTimeout(resolve, 1_250))
   router.push("/app")
 }
 
