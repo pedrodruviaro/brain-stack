@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const router = useRouter()
-
 const user = useSupabaseUser()
 const session = useSupabaseSession()
 
@@ -12,10 +10,7 @@ const isLogged = computed(() => {
 <template>
   <div>
     <div class="relative z-10">
-      <AdminHeader
-        v-if="isLogged"
-        @wants-create-idea="router.push('/app/idea/new')"
-      />
+      <AdminHeader v-if="isLogged" />
       <PublicHeader v-else />
     </div>
 
