@@ -11,6 +11,8 @@ useSeoMeta({
 
 const isPreviewOpen = ref(false)
 
+const router = useRouter()
+
 const { user } = useLoggedUser()
 const { loading, title, content, errors, create, safeParse } = useIdeaCreate({
   user,
@@ -22,8 +24,7 @@ const handleCreate = async () => {
 
   const response = await create()
   if (response) {
-    // router.push...
-    console.log("Criado!")
+    setTimeout(() => router.push("/app"), 750)
   }
 }
 </script>
@@ -37,8 +38,17 @@ const handleCreate = async () => {
       v-model:content="content"
       :loading="loading"
       :errors="errors"
-      @create="handleCreate"
       @open-preview="isPreviewOpen = true"
+    />
+
+    <Button
+      label="Criar ideia"
+      icon="pi pi-plus"
+      icon-pos="right"
+      size="small"
+      class="mt-6"
+      :loading="loading"
+      @click="handleCreate"
     />
 
     <LazyDialog

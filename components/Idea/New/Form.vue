@@ -11,7 +11,6 @@ const props = defineProps<{
 
 const emits = defineEmits<{
   (e: "open-preview"): void
-  (e: "create"): void
 }>()
 
 const title = defineModel<string>("title")
@@ -94,14 +93,5 @@ const handleSetDefaultTemplate = () => {
         >{{ props.errors.content._errors[0] }}</span
       >
     </div>
-
-    <Button
-      label="Criar ideia"
-      icon="pi pi-plus"
-      icon-pos="right"
-      size="small"
-      :loading="props.loading"
-      @click="emits('create')"
-    />
   </div>
 </template>
