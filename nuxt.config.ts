@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "@nuxtjs/supabase",
+    "@vueuse/nuxt",
   ],
   supabase: {
     redirectOptions: {

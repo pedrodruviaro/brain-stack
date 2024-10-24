@@ -7,3 +7,9 @@ export interface CreateOptions {
 }
 
 export type UpdateOptions = Partial<Idea>
+
+export interface ReadAllOptions {
+  userId: string
+  to?: number
+  from?: number
+}
