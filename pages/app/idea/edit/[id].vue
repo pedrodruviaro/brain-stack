@@ -26,7 +26,7 @@ const { data: idea } = await useAsyncData("idea", async () => {
 
 const user = useSupabaseUser()
 
-// Rule -> cannot edit if not owner
+// Rule -> cannot edit If not owner
 if (!idea.value || idea.value.profileId !== user.value?.id) {
   router.push("/app")
   console.log("nao pode editar")
@@ -41,6 +41,28 @@ const handleUpdate = async () => {
   if (!isValid) return
 
   await update()
+}
+
+const { removeIdea } = useIdeaDelete(ideaId.value)
+const confirm = useConfirm()
+
+const handleDelete = async () => {
+  confirm.require({
+    header: "Tem certeza que deseja apagar essa ideia?",
+    message: "Isso não pode ser revertido",
+    icon: "pi pi-info-circle",
+    position: "bottom",
+    rejectProps: {
+      label: "Voltar",
+      severity: "secondary",
+      text: true,
+    },
+    acceptProps: {
+      label: "Apagar",
+      text: true,
+    },
+    accept: async () => await removeIdea(),
+  })
 }
 
 const isPreviewOpen = ref(false)
@@ -58,13 +80,21 @@ const isPreviewOpen = ref(false)
       @open-preview="isPreviewOpen = true"
     />
 
-    <Button
-      label="Salvar edição"
-      size="small"
-      class="mt-6"
-      :loading="loading"
-      @click="handleUpdate"
-    />
+    <div class="flex gap-4 flex-wrap items-center mt-6">
+      <Button
+        label="Salvar edição"
+        size="small"
+        :loading="loading"
+        @click="handleUpdate"
+      />
+
+      <Button
+        label="Apagar Ideia"
+        severity="danger"
+        size="small"
+        @click="handleDelete"
+      />
+    </div>
 
     <LazyDialog
       v-model:visible="isPreviewOpen"

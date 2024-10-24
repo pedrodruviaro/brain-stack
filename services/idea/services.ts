@@ -55,4 +55,10 @@ export default (client: SupabaseClient<Database>) => ({
       results: readAllAdapter(ideas.data),
     }
   },
+
+  async deleteOne(id: string) {
+    await client.from("ideas").delete().eq("id", id)
+
+    return { id }
+  },
 })
