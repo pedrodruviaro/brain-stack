@@ -7,7 +7,10 @@ useSeoMeta({
 <template>
   <div>
     <Banner />
-    <div>Landing page</div>
-    <NuxtLink to="/auth/login">LOGIN</NuxtLink>
+    <LandingPageHero />
+    <LandingPageTechStack />
+    <LandingPageConception />
+    <LandingPageScreens />
+    <LandingPageFooter />
   </div>
 </template>
