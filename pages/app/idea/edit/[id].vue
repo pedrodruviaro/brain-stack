@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import LazyDialog from "primevue/dialog"
-
 definePageMeta({
   layout: "auth",
 })
