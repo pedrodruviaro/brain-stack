@@ -23,6 +23,7 @@ export default defineNuxtConfig({
   },
   primevue: {
     options: {
+      ripple: true,
       theme: {
         preset: AppPreset,
         options: {

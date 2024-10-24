@@ -6,11 +6,14 @@ useSeoMeta({
 
 <template>
   <div>
-    <Banner />
     <LandingPageHero />
+    <LandingPageInfos />
+    <LandingPageBanner />
     <LandingPageTechStack />
     <LandingPageConception />
     <LandingPageScreens />
     <LandingPageFooter />
+
+    <ScrollTop />
   </div>
 </template>

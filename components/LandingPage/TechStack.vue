@@ -22,7 +22,7 @@
           shape="circle"
         />
         <Avatar
-          image="https://www.primetek.com.tr/img/primevue.jpg"
+          image="https://i2.wp.com/www.primefaces.org/wp-content/uploads/2021/10/primevue-logo-1.png?fit=263%2C300&ssl=1"
           size="xlarge"
           shape="circle"
         />

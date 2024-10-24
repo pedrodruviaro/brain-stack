@@ -60,7 +60,7 @@ const toggle = (event: Event) => menu.value.toggle(event)
 <template>
   <header class="py-3 shadow-sm">
     <BaseContainer class="flex items-center justify-between gap-3 flex-wrap">
-      <NuxtLink to="/app" class="max-w-28 block">
+      <NuxtLink to="/app" class="max-w-36 block">
         <div>
           <Logo variant="hybrid-dark" />
         </div>
