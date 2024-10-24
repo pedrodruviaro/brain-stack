@@ -1,38 +1,31 @@
 <script setup lang="ts">
+type Variants = "white" | "dark" | "hybrid" | "hybrid-dark"
+
+type ImageToRender = {
+  [key in Variants]: string
+}
+
 const props = withDefaults(
   defineProps<{
-    variant?: "white" | "dark" | "hybrid" | "hybrid-dark"
+    variant?: Variants
   }>(),
   { variant: "white" }
 )
+
+const imageToRender: ImageToRender = {
+  white: "logo-white",
+  dark: "logo-dark",
+  hybrid: "logo-pink",
+  "hybrid-dark": "logo-dark-pink",
+}
 </script>
 
 <template>
   <span class="block max-w-max">
     <img
-      src="/images/logo-white.svg"
+      :src="`/images/${imageToRender[props.variant]}.svg`"
       aria-hidden="true"
       alt=""
-      v-if="props.variant === 'white'"
-    />
-    <img
-      src="/images/logo-pink.svg"
-      aria-hidden="true"
-      alt=""
-      v-else-if="props.variant === 'hybrid'"
-    />
-    <img
-      src="/images/logo-dark.svg"
-      aria-hidden="true"
-      alt=""
-      v-else-if="props.variant === 'dark'"
-    />
-
-    <img
-      src="/images/logo-dark-pink.svg"
-      aria-hidden="true"
-      alt=""
-      v-else-if="props.variant === 'hybrid-dark'"
     />
   </span>
 </template>

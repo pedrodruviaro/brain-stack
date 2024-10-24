@@ -62,7 +62,7 @@ const toggle = (event: Event) => menu.value.toggle(event)
     <BaseContainer class="flex items-center justify-between gap-3 flex-wrap">
       <NuxtLink to="/app" class="max-w-28 block">
         <div>
-          <Logo variant="dark" />
+          <Logo variant="hybrid-dark" />
         </div>
       </NuxtLink>
 
