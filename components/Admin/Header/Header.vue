@@ -90,7 +90,5 @@ const toggle = (event: Event) => menu.value.toggle(event)
         </div>
       </div>
     </BaseContainer>
-
-    <ConfirmDialog />
   </header>
 </template>

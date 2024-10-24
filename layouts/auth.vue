@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import LazyConfirmDialog from "primevue/confirmdialog"
+
 const { loading } = useMyself()
 </script>
 
@@ -15,5 +17,7 @@ const { loading } = useMyself()
 
       <slot v-else />
     </BaseContainer>
+
+    <LazyConfirmDialog />
   </div>
 </template>
