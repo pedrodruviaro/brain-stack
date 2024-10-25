@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxtjs/supabase",
     "@vueuse/nuxt",
+    "@nuxtjs/seo",
   ],
   supabase: {
     redirectOptions: {
@@ -45,5 +46,15 @@ export default defineNuxtConfig({
       supabaseKey: process.env.SUPABASE_KEY,
       siteUrl: process.env.SITE_URL,
     },
+  },
+  site: {
+    url: process.env.SITE_URL,
+    name: "BrainStack",
+    description:
+      "Crie e compartilhe suas melhores ideias em poucos cliques. Deixe que a comunidade explore seu potencial e inspire-se em novas possibilidades.",
+    defaultLocale: "pt-BR",
+  },
+  robots: {
+    disallow: ["/app"],
   },
 })

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/seo": "^2.0.0-rc.23",
     "@nuxtjs/supabase": "^1.4.1",
     "@primevue/themes": "^4.1.1",
     "nuxt": "^3.13.2",
