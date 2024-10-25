@@ -1,6 +1,8 @@
 <script setup lang="ts">
 useSeoMeta({
   title: "Compartilhe suas ideias de criação",
+  description:
+    "Crie e compartilhe suas melhores ideias em poucos cliques. Deixe que a comunidade explore seu potencial e inspire-se em novas possibilidades.",
 })
 </script>
 
@@ -10,10 +12,7 @@ useSeoMeta({
     <LandingPageInfos />
     <LandingPageBanner />
     <LandingPageTechStack />
-    <LandingPageConception />
-    <LandingPageScreens />
     <LandingPageFooter />
-
     <ScrollTop />
   </div>
 </template>
