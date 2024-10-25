@@ -1,75 +1,53 @@
-# Nuxt Minimal Starter
+# BrainStack
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+- [Ver ao vivo](https://brainstack.pedroruviaro.com.br/)
 
-## Setup
+## Concepção
 
-Make sure to install dependencies:
+O app foi pensado como uma ferramenta para compartilhar ideias, como por exemplo, ideias de projetos.
 
-```bash
-# npm
-npm install
+## Motivo
 
-# pnpm
-pnpm install
+Criado para praticar Nuxt, Supabase e Typescript com uma arquitetura mais "nuxt style", usando dos auto imports e benefícios do próprio framework. No fim, não gostei muito do resultado não 🫠.
 
-# yarn
-yarn install
+## Stack
 
-# bun
-bun install
-```
+O projeto usa Nuxt, Supabase e PrimeVue como módulos principais
 
-## Development Server
+## Telas
 
-Start the development server on `http://localhost:3000`:
+### Landing page
 
-```bash
-# npm
-npm run dev
+![lp](/public/documentation/lp.png)
 
-# pnpm
-pnpm dev
+## Login
 
-# yarn
-yarn dev
+![login](/public/documentation/login.png)
 
-# bun
-bun run dev
-```
+## Dashboard
 
-## Production
+![dashboard](/public/documentation/app.png)
 
-Build the application for production:
+## Nova ideia
 
-```bash
-# npm
-npm run build
+![new](/public/documentation/new.png)
 
-# pnpm
-pnpm build
+## Editar ideia
 
-# yarn
-yarn build
+![edit](/public/documentation/edit.png)
 
-# bun
-bun run build
-```
+## Página pública (autenticado)
 
-Locally preview production build:
+![public-logged](/public/documentation/public-logged.png)
 
-```bash
-# npm
-npm run preview
+## Página pública (não autenticado)
 
-# pnpm
-pnpm preview
+![public-not-logged](/public/documentation/public-not-logged.png)
 
-# yarn
-yarn preview
+---
 
-# bun
-bun run preview
-```
+Dúvidas? Fale comigo e vamos conversar :)
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[Linkedin](https://www.linkedin.com/in/pedroruviaro/)
+
+[pedroruviaro.com.br](https://pedroruviaro.com.br/)
